@@ -1,0 +1,25 @@
+<h1>Meu primeiro componente</h1>
+<img src="{{img}}" width="30px" height="30px">
+<img [src]="img" width="30px" height="30px">
+<img bind-src="img" width="30px" height="30px">
+<button (click)="alert()">OI</button>
+<select #classe (change)="0">
+            <option value="alert-success">Success</option>
+            <option value="alert-info">Info</option>
+            <option value="alert-warning">Warning</option>
+            <option value="alert-danger">Danger</option>
+        </select>
+<br>
+<div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+    Sucesso
+</div>
+<div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+<div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+    Warning
+</div>
+<div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+    Danger
+</div>
+<div class="alert {{ classe.value }}" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+    Mensagem em caso de erro
+</div>
